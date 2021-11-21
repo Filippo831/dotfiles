@@ -1,0 +1,12 @@
+configuration {
+        lines:10;
+        line-padding:10;
+        show-icons:true;
+        font: "Hack Nerd Font Mono 14";
+        kb-row-up:"Control+k";
+        kb-row-down:"Control+j";
+        kb-remove-to-eol: "Control+p";
+        kb-accept-entry:"Control+n,KP_Enter,Return";
+}
+
+@import "/usr/share/rofi/themes/gruvbox-dark-soft.rasi"
