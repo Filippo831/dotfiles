@@ -171,10 +171,10 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym ograve resize grow width 10 px or 10 ppt
+        bindsym l resize shrink width 10 px or 10 ppt
+        bindsym r resize grow height 10 px or 10 ppt
+        bindsym j resize shrink height 10 px or 10 ppt
+        bindsym h resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
@@ -257,3 +257,12 @@ exec --no-startup-id xinput enable 15
 
 # change caps lock with esc
 exec --no-startup-id setxkbmap -option caps:swapescape
+
+#default apps workspace
+#for_window [class="Alacritty"] move to workspace $ws1; workspace $ws1
+for_window [class="Firefox Web Browser"] move to workspace $ws2;
+#for_window [class="Mailspring"] move to workspace $ws4; workspace $ws4
+for_window [class="TelegramDesktop"] move to workspace $ws4; 
+for_window [class="Bitwarden"] move to workspace $ws5; 
+for_window [class="Discord"] move to workspace $ws7; 
+for_window [class="Spotify"] move to workspace $ws8;
