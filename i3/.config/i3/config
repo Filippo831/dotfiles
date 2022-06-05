@@ -47,9 +47,10 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 #bindsym XF86MonBrightnessDown exec sh ~/.config/i3/backlight.sh -dec 20
 #bindsym XF86MonBrightnessUp exec xbacklight -inc 20
 #bindsym XF86MonBrightnessDown exec xbacklight -dec 20
-bindsym XF86MonBrightnessUp exec --no-startup-id sudo brightnessctl set +5%
-bindsym XF86MonBrightnessDown exec --no-startup-id sudo brightnessctl set 5%-
-exec --no-startup-id sudo brightnessctl set 100
+bindsym XF86MonBrightnessUp exec brightnessctl set +10 && $HOME/.config/i3/scripts/brightness.sh
+bindsym XF86MonBrightnessDown exec brightnessctl set 10- && $HOME/.config/i3/scripts/brightness.sh
+exec --no-startup-id python $HOME/.config/i3/frame_capture/main.py
+#exec --no-startup-id sudo brightnessctl set 100
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -247,16 +248,16 @@ gaps inner 10
 
 
 # background
-exec --no-startup-id sudo nitrogen --set-zoom-fill $HOME/wallpaper/home_inside.jpg --head=0 && sudo nitrogen --set-auto $HOME/wallpaper/home_inside.jpg --head=1
+exec --no-startup-id nitrogen --set-zoom-fill $HOME/Pictures/mojave.png --head=0 && nitrogen --set-auto $HOME/Pictures/mojave.png --head=1
 
 # display settings
-exec --no-startup-id xrandr --output eDP --primary --mode 1920x1080 --pos 2560x1000 --output HDMI-A-0 --mode 2560x1440 --pos 0x0
+exec --no-startup-id xrandr --output eDP  --mode 1920x1080 --pos 2560x1000 --output HDMI-A-0--primary --mode 2560x1440 --pos 0x0
 
 # start touchpad
 exec --no-startup-id xinput enable 15
 
 # change caps lock with esc
-exec --no-startup-id setxkbmap -option caps:swapescape
+exec setxkbmap -option caps:swapescape
 
 #default apps workspace
 #for_window [class="Alacritty"] move to workspace $ws1; workspace $ws1
@@ -266,3 +267,6 @@ for_window [class="TelegramDesktop"] move to workspace $ws4;
 for_window [class="Bitwarden"] move to workspace $ws5; 
 for_window [class="Discord"] move to workspace $ws7; 
 for_window [class="Spotify"] move to workspace $ws8;
+
+
+exec "setxkbmap -layout it"
