@@ -21,14 +21,14 @@ tools:
     lint-formats:
       - '%f:%l:%c: %m'
 
-  cppcheck-lint: &cppcheck-lint
-    prefix: cppcheck
-    lint-command: 'cppcheck --quiet --force --enable=style --error-exitcode=1 ${INPUT}'
-    lint-stdin: false
-    lint-formats:
-      - '%f:%l:%c: %m'
-    root-markers:
-    - compile_commands.json
+  #cppcheck-lint: &cppcheck-lint
+    #prefix: cppcheck
+    #lint-command: 'cppcheck --quiet --force --enable=style --error-exitcode=1 ${INPUT}'
+    #lint-stdin: false
+    #lint-formats:
+      #- '%f:%l:%c: %m'
+    #root-markers:
+    #- compile_commands.json
 
 
 languages:
@@ -38,8 +38,8 @@ languages:
     - <<: *python-isort
     - <<: *python-flake8
   
-  cpp:
-    - <<: *cppcheck-lint
+  #cpp:
+    #- <<: *cppcheck-lint
 
-  c:
-    - <<: *cppcheck-lint
+  #c:
+    #- <<: *cppcheck-lint

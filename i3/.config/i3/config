@@ -247,11 +247,12 @@ gaps inner 10
 
 
 
-# background
-exec --no-startup-id nitrogen --set-zoom-fill $HOME/Pictures/mojave.png --head=0 && nitrogen --set-auto $HOME/Pictures/mojave.png --head=1
 
 # display settings
-exec --no-startup-id xrandr --output eDP  --mode 1920x1080 --pos 2560x1000 --output HDMI-A-0--primary --mode 2560x1440 --pos 0x0
+exec --no-startup-id xrandr --output eDP --primary --mode 1920x1080 --pos 2560x1000 --output HDMI-A-0 --mode 2560x1440 --pos 0x0
+
+# background
+exec --no-startup-id nitrogen --set-zoom-fill $HOME/Pictures/mojave.png --head=0 && nitrogen --set-auto $HOME/Pictures/mojave.png --head=1
 
 # start touchpad
 exec --no-startup-id xinput enable 15

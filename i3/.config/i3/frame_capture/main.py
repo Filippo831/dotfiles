@@ -25,7 +25,7 @@ for r in frame:
     for c in r:
         total += sum(c) + len(c)
         
-avarage = total / (400 * 400) / 5
+avarage = total / (400 * 400) / 3
 print(avarage)
 
 command = "brighnessctl set " + str(avarage)
