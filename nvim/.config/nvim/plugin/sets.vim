@@ -22,9 +22,11 @@ set scrolloff=8
 set ttimeoutlen=0
 set updatetime=200
 set encoding=UTF-8
+set iskeyword-=_
 
 set signcolumn=yes
 set colorcolumn=80
 highlight ColorColumn ctermbg=0 guibg=grey
+set cmdheight=1
 
-set cmdheight=2
+set clipboard=unnamedplus

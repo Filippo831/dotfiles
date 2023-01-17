@@ -43,7 +43,7 @@ Plug 'nvim-telescope/telescope-fzy-native.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 " tmux & vim moves
-Plug 'christoomey/vim-tmux-navigator'
+"Plug 'christoomey/vim-tmux-navigator'
 
 " Git integration
 Plug 'tpope/vim-fugitive'
@@ -62,6 +62,12 @@ Plug 'ayu-theme/ayu-vim'
 Plug 'hoob3rt/lualine.nvim'
 Plug 'ryanoasis/vim-devicons'
 
+" harpoon
+Plug 'ThePrimeagen/harpoon'
+
+" ident line
+Plug 'lukas-reineke/indent-blankline.nvim'
+
 call plug#end()
 
 
@@ -70,11 +76,11 @@ set termguicolors
 set background=dark
 
 let g:gruvbox_contrast_dark="hard"
-"colorscheme gruvbox
+colorscheme gruvbox
 
 " ayucolor: dark, light, mirage 
-colorscheme ayu
-let ayucolor="dark"
+"colorscheme ayu
+"let ayucolor="dark"
 
 
 " --------- Keymaps ----------
@@ -92,3 +98,12 @@ nnoremap <silent> <Leader>- :vertical resize -5<CR>
 " github copilot
 imap <silent><script><expr> <C-J> copilot#Accept("\<CR>")
 let g:copilot_no_tab_map = v:true
+
+" move the line up and down
+vnoremap <C-j> :m '>+1<CR>gv=gv
+vnoremap <C-k> :m '<-2<CR>gv=gv
+
+nnoremap <leader>h <C-w>h
+nnoremap <leader>l <C-w>l
+nnoremap <leader>j <C-w>j
+nnoremap <leader>k <C-w>k

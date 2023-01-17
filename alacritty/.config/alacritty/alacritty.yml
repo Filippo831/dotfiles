@@ -6,13 +6,13 @@
 #╚═╝░░╚═╝╚══════╝╚═╝░░╚═╝░╚════╝░╚═╝░░╚═╝╚═╝░░░╚═╝░░░░░░╚═╝░░░░░░╚═╝░░░
 
 font:
-  size: 15
+  size: 20 
   normal:
-    family: Comic Mono
+    family: Hack
   bold:
-    family: Comic Mono
+    family: Hack
   italic:
-    family: Comic Mono
+    family: Hack
 
 alt_send_esc: false  # fix some problems with ALT key on mac os
 window_opacity: 0.999  # fix lag with Mission Control's animations on mac os
