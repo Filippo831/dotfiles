@@ -19,6 +19,8 @@ fpath=($ZDOTDIR/pure $fpath)
 autoload -U promptinit; promptinit
 prompt zefram 
 
+ZSH_THEME=amuse
+
 
 # GENERAL ALIASES
 alias ll="ls -al"
