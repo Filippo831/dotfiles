@@ -67,3 +67,4 @@ bindkey '^r' history-incremental-search-backward
 
 source $HOME/.oh-my-zsh/oh-my-zsh.sh
 
+export PATH=$PATH:/home/filippo/.spicetify
