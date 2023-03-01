@@ -1,4 +1,4 @@
-#files: 823	version: 5.9
+#files: 828	version: 5.9
 
 _comps=(
 '-' '_precommand'
@@ -68,6 +68,7 @@ _comps=(
 'attr' '_attr'
 'augtool' '_augeas'
 'autoload' '_typeset'
+'autorandr' '_autorandr'
 'avahi-browse' '_avahi'
 'avahi-browse-domains' '_avahi'
 'avahi-resolve' '_avahi'
@@ -263,6 +264,12 @@ _comps=(
 'dmesg' '_dmesg'
 'dmidecode' '_dmidecode'
 'doas' '_doas'
+'docker' '_docker'
+'dockerd' '_docker'
+'_docker-ls' '_docker-ls'
+'docker-ls' '_docker-ls'
+'_docker-rm' '_docker-rm'
+'docker-rm' '_docker-rm'
 'domainname' '_yp'
 'dos2unix' '_dos2unix'
 'downgrade' '_downgrade'
@@ -1270,6 +1277,7 @@ _comps=(
 'tkconch' '_twisted'
 'tkinfo' '_texinfo'
 'tla' '_tla'
+'tldr' '_tldr'
 'tload' '_tload'
 'tmux' '_tmux'
 'todo' '_devtodo'
@@ -1675,18 +1683,19 @@ bindkey '^[,' _history-complete-newer
 bindkey '^[/' _history-complete-older
 bindkey '^[~' _bash_complete-word
 
-autoload -Uz _alacritty _bluetoothctl _bootctl _busctl _bwrap \
-            _cargo _checkupdates _coredumpctl _curl _downgrade \
-            _firewalld _hostnamectl _journalctl _kdeconnect _kernel-install \
-            _libinput _localectl _loginctl _machinectl _mkinitcpio \
-            _mpv _netctl _networkctl _oomctl _paccache \
-            _pacdiff _pacignore _paclist _paclog-pkglist _pacman \
-            _pacscripts _pacsearch _pacsort _pactree _parallel \
-            _pkgfile _playerctl _pulseaudio _rankmirrors _resolvectl \
-            _rg _sd_hosts_or_user_at_host _sd_machines _sd_outputmodes _sd_unit_files \
-            _snap _systemctl _systemd _systemd-analyze _systemd-delta \
-            _systemd-inhibit _systemd-nspawn _systemd-path _systemd-run _systemd-tmpfiles \
-            _timedatectl _udevadm _updpkgsums _yay _cdr \
+autoload -Uz _alacritty _autorandr _bluetoothctl _bootctl _busctl \
+            _bwrap _cargo _checkupdates _coredumpctl _curl \
+            _docker _docker-ls _docker-rm _downgrade _firewalld \
+            _hostnamectl _journalctl _kdeconnect _kernel-install _libinput \
+            _localectl _loginctl _machinectl _mkinitcpio _mpv \
+            _netctl _networkctl _oomctl _paccache _pacdiff \
+            _pacignore _paclist _paclog-pkglist _pacman _pacscripts \
+            _pacsearch _pacsort _pactree _parallel _pkgfile \
+            _playerctl _pulseaudio _rankmirrors _resolvectl _rg \
+            _sd_hosts_or_user_at_host _sd_machines _sd_outputmodes _sd_unit_files _snap \
+            _systemctl _systemd _systemd-analyze _systemd-delta _systemd-inhibit \
+            _systemd-nspawn _systemd-path _systemd-run _systemd-tmpfiles _timedatectl \
+            _tldr _udevadm _updpkgsums _yay _cdr \
             _all_labels _all_matches _alternative _approximate _arg_compile \
             _arguments _bash_completions _cache_invalid _call_function _combination \
             _complete _complete_debug _complete_help _complete_help_generic _complete_tag \
@@ -1845,5 +1854,5 @@ autoload -Uz +X _call_program
 typeset -gUa _comp_assocs
 _comp_assocs=( '' )
 
-#omz revision: 8a68bf67720a6a5442ae947d10d74b1dd3558d91
+#omz revision: a4a9a8cd8ccb4240a7c5df5f6766bd5340646e63
 #omz fpath: /home/filippo/.oh-my-zsh/functions /home/filippo/.oh-my-zsh/completions /home/filippo/.oh-my-zsh/cache/completions /home/filippo/.config/zsh/plugins /home/filippo/.config/zsh/pure /zsh/plugins/zsh-completions/src /usr/local/share/zsh/site-functions /usr/share/zsh/site-functions /usr/share/zsh/functions/Calendar /usr/share/zsh/functions/Chpwd /usr/share/zsh/functions/Completion /usr/share/zsh/functions/Completion/Base /usr/share/zsh/functions/Completion/Linux /usr/share/zsh/functions/Completion/Unix /usr/share/zsh/functions/Completion/X /usr/share/zsh/functions/Completion/Zsh /usr/share/zsh/functions/Exceptions /usr/share/zsh/functions/MIME /usr/share/zsh/functions/Math /usr/share/zsh/functions/Misc /usr/share/zsh/functions/Newuser /usr/share/zsh/functions/Prompts /usr/share/zsh/functions/TCP /usr/share/zsh/functions/VCS_Info /usr/share/zsh/functions/VCS_Info/Backends /usr/share/zsh/functions/Zftp /usr/share/zsh/functions/Zle

@@ -58,7 +58,7 @@ xset r rate 300 50
 
 # change keyboard layout
 alias italian="setxkbmap it"
-alias swapescape="setxkbmap -option \"caps:swapescape\""
+alias aoeu="setxkbmap -option \"caps:swapescape\""
 alias dvorak="setxkbmap dvorak"
 
 # reverse search

@@ -575,17 +575,16 @@ bindsym $mod+d exec rofi -modi drun -show drun \
 #		-config ~/.config/rofi/rofidmenu.rasi
 
 #autoset it keyboard
-                #exec --no-startup-id setxkbmap it
+#exec --no-startup-id setxkbmap it
 
-#autoset caps as escape
-                exec --no-startup-id setxkbmap -option "caps:swapescape"
 
 #applications autostart
-                exec --no-startup-id kdeconnect-app
-                exec --no-startup-id firefox
-                exec --no-startup-id telegram-desktop
+exec --no-startup-id "sh -c 'sleep 1; exec alacritty'"
+exec --no-startup-id kdeconnect-app
+exec --no-startup-id firefox
+exec --no-startup-id telegram-desktop
 
-                bindsym $mod+c exec --no-startup-id rofi -show calc -modi calc -no-show-match -no-sort -config ~/.config/rofi/rofidmenu.rasi
+bindsym $mod+c exec --no-startup-id rofi -show calc -modi calc -no-show-match -no-sort -config ~/.config/rofi/rofidmenu.rasi
 
 ## things
 exec --no-startup-id gnome-flashback
@@ -593,5 +592,5 @@ exec --no-startup-id /usr/lib/gsd-xsettings
 exec_always --no-startup-id gnome-power-manager
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
-
+#autoset caps as escape
 exec --no-startup-id setxkbmap -option "caps:swapescape"
