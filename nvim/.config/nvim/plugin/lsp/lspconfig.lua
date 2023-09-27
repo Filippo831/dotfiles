@@ -49,7 +49,7 @@ local servers = { "efm", "pyright", "dartls", "vimls", "rust_analyzer", "html", 
 for _, lsp in ipairs(servers) do
     lspconfig[lsp].setup {
         on_attach = on_attach,
-        capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp
+        capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp
         .protocol
         .make_client_capabilities())
     }
@@ -60,15 +60,15 @@ local clangd_capabilities = vim.lsp.protocol.make_client_capabilities();
 clangd_capabilities.offsetEncoding = { "utf-16" }
 lspconfig.clangd.setup {
     on_attach = on_attach,
-    capabilities = require('cmp_nvim_lsp').update_capabilities(
+    capabilities = require('cmp_nvim_lsp').default_capabilities(
         clangd_capabilities)
 
 }
 
-lspconfig.sumneko_lua.setup {
+lspconfig.lua_ls.setup {
     on_attach = on_attach,
     settings = { Lua = { diagnostics = { globals = { 'vim' } } } },
-    capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol
+    capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol
     .make_client_capabilities())
 }
 
@@ -88,4 +88,4 @@ end
 ---- You will likely want to reduce updatetime which affects CursorHold
 ---- note: this setting is global and should be set only once
 vim.cmd [[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float({focusable=false})]]
-vim.cmd [[autocmd BufWritePre *.* lua vim.lsp.buf.formatting_seq_sync()]]
+vim.cmd [[autocmd BufWritePre *.* lua vim.lsp.buf.format()]]

@@ -8,13 +8,12 @@
 font:
   size: 19 
   normal:
-    family: Hack
+    family: Hack Nerd Font
   bold:
-    family: Hack
+    family: Hack Nerd Font
   italic:
-    family: Hack
+    family: Hack Nerd Font
 
-alt_send_esc: false  # fix some problems with ALT key on mac os
 window_opacity: 0.999  # fix lag with Mission Control's animations on mac os
 
 # true colors in tmux-nvim
