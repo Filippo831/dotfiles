@@ -350,7 +350,7 @@ assign [class="kdeconnect"] $ws6
 #exec_always --no-startup-id picom -b
 #
 # for custom config:
-#exec_always --no-startup-id picom --config  ~/.config/picom.conf
+exec_always --no-startup-id picom --config  ~/.config/picom.conf
 
 #############################################
 # autostart applications/services on login: #
@@ -385,7 +385,7 @@ exec --no-startup-id ~/.screenlayout/monitor.sh
 
 # set wallpaper
 exec --no-startup-id sleep 2 && nitrogen --restore
-#exec --no-startup-id feh --bg-fill /usr/share/endeavouros/backgrounds/endeavouros_i3.png
+#exec --no-startup-id feh --bg-fill /home/filippo/Pictures/beautiful-shot-snowy-mountain-sunset.jpg
 
 # set powersavings for display:
 exec --no-startup-id xset s 480 dpms 600 600 600
@@ -508,13 +508,14 @@ client.urgent		    	$urgentred	$urgentred	$white		$yellowbrown	$yellowbrown
 
 
 bar {
-    font pango: Noto Sans Regular 10
+
+    font pango: DejaVu Sans Mono, FontAwesome 10
         status_command i3status-rs ~/.config/i3/config.toml
-        position bottom
+        position top 
 ##strip_workspace_name no
 
         colors {
-            separator          $purple
+            separator          $grey
                 background         #222222cc
                 statusline         $white
 #                          		border 		        bg		txt		indicator
@@ -563,7 +564,7 @@ bar {
 ## rofi bindings fancy application menu ($mod+d /F9 optional disabled)
 
 bindsym $mod+d exec rofi -modi drun -show drun \
-            -config ~/.config/rofi/rofidmenu.rasi
+            -config ~/.config/rofi/arch.rasi
 
 #bindsym F9 exec rofi -modi drun -show drun \
 #		-config ~/.config/rofi/rofidmenu.rasi
@@ -592,7 +593,7 @@ exec --no-startup-id kdeconnect-app
 exec --no-startup-id firefox
 exec --no-startup-id telegram-desktop
 
-bindsym $mod+c exec --no-startup-id rofi -show calc -modi calc -no-show-match -no-sort -config ~/.config/rofi/rofidmenu.rasi
+bindsym $mod+c exec --no-startup-id rofi -show calc -modi calc -no-show-match -no-sort -config ~/.config/rofi/arch.rasi
 
 ## things
 exec --no-startup-id /usr/lib/gsd-xsettings
