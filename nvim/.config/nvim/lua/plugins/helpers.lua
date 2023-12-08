@@ -31,7 +31,7 @@ return {
     -- Autopairs brackets
     {
         "windwp/nvim-autopairs",
-        config = function() require("nvim-autopairs").setup {} end
+        config = function() require("nvim-autopairs").setup() end
     },
 
     -- Undotree
@@ -57,4 +57,10 @@ return {
         "iamcco/markdown-preview.nvim",
         build = function() vim.fn["mkdp#util#install"]() end,
     }),
+
+    {
+        "suoto/vim-hdl",
+        config = function ()
+            vim.g.vimhdl_conf_file = "./config" end,
+    }
 }
