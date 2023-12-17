@@ -310,7 +310,7 @@ set $ws10 "10"
 #workspace $ws5 output HDMI-0
 
 # bind program to workspace and focus to them on startup:
-assign [class="firefox"] $ws2
+assign [class="firefox"] $ws3
 assign [class="Thunar"] $ws3
 assign [class="Thunderbird"] $ws4
 assign [class="TelegramDesktop"] $ws7
@@ -592,6 +592,7 @@ exec --no-startup-id "sh -c 'sleep 1; exec alacritty'"
 exec --no-startup-id kdeconnect-app
 exec --no-startup-id firefox
 exec --no-startup-id telegram-desktop
+exec --no-startup-id com.spotify.Client
 
 bindsym $mod+c exec --no-startup-id rofi -show calc -modi calc -no-show-match -no-sort -config ~/.config/rofi/arch.rasi
 
