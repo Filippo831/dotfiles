@@ -5,22 +5,24 @@
 #██║░░██║███████╗██║░░██║╚█████╔╝██║░░██║██║░░░██║░░░░░░██║░░░░░░██║░░░
 #╚═╝░░╚═╝╚══════╝╚═╝░░╚═╝░╚════╝░╚═╝░░╚═╝╚═╝░░░╚═╝░░░░░░╚═╝░░░░░░╚═╝░░░
 
-font:
-  size: 19 
-  normal:
-    family: Hack Nerd Font
-  bold:
-    family: Hack Nerd Font
-  italic:
-    family: Hack Nerd Font
+[font]
+  size = 19
 
-window_opacity: 0.999  # fix lag with Mission Control's animations on mac os
+  [font.normal]
+    family = "Hack Nerd Font"
 
-# true colors in tmux-nvim
-env:
-  TERM: xterm-256color
+  [font.bold]
+    family = "Hack Nerd Font"
 
-#The definition of color schemes.
-  
-import:
-- ~/.alacritty-colorscheme/themes/gruvbox_dark.yaml
+  [font.italic]
+    family = "Hack Nerd Font"
+
+# Uncomment the line below to fix lag with Mission Control's animations on macOS
+# window_opacity = 0.999
+
+[env]
+  TERM = "xterm-256color"
+
+# The definition of color schemes.
+import = "~/.alacritty-colorscheme/themes/gruvbox_dark.yaml"
+

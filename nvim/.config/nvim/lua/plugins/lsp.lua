@@ -29,6 +29,7 @@ local function lsp_zero_config()
         vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
         vim.keymap.set("n", "<leader>fl", "<cmd>LspZeroFormat<CR>")
         vim.keymap.set("v", "<leader>fl", vim.lsp.buf.format)
+        vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
 
         vim.keymap.set("n", "gd", vim.lsp.buf.definition)
         vim.keymap.set("n", "gI", vim.lsp.buf.implementation)
