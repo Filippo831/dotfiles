@@ -32,10 +32,16 @@ format = " $icon root: $available.eng(w:2) "
 
 [[block]]
 block = "memory"
-format = " $icon_swap $mem_free.eng(w:3,u:B,p:Mi)-$swap_free.eng(w:3,u:B,p:Mi)"
+format = " $icon_swap $mem_avail.eng(w:3,u:B,p:Mi)-$swap_free.eng(w:3,u:B,p:Mi)"
 interval = 30
 warning_mem = 70
 critical_mem = 90
+
+[[block]]
+block = "battery"
+format = " $percentage {$time |}"
+device = "DisplayDevice"
+driver = "upower"
 
 [[block]]
 block = "time"
