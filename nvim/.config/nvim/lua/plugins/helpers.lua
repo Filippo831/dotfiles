@@ -58,9 +58,4 @@ return {
         build = function() vim.fn["mkdp#util#install"]() end,
     }),
 
-    {
-        "suoto/vim-hdl",
-        config = function ()
-            vim.g.vimhdl_conf_file = "./config" end,
-    }
 }

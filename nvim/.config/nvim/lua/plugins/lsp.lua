@@ -88,7 +88,6 @@ local function lsp_zero_config()
     })
     lsp_zero.configure("clangd")
     lsp_zero.configure("dockerls")
-    lsp_zero.configure("hdl_checker")
 
     lsp_zero.configure("ltex", {
         settings = {

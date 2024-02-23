@@ -606,7 +606,7 @@ exec --no-startup-id "sh -c 'sleep 1; exec alacritty'"
 exec --no-startup-id kdeconnect-app
 exec --no-startup-id firefox
 exec --no-startup-id telegram-desktop
-exec --no-startup-id com.spotify.Client
+exec --no-startup-id spotify
 
 bindsym $mod+c exec --no-startup-id rofi -show calc -modi calc -no-show-match -no-sort -config ~/.config/rofi/arch.rasi
 
