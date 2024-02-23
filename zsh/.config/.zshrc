@@ -10,6 +10,7 @@
 autoload -U compinit; compinit
 _comp_options+=(globdots) # With hidden files
 source $ZDOTDIR/completion.zsh
+plugin=(zsh-syntax-highlighting vi-mode git sudo)
 
 # PROMPT STYLE
 #fpath=($ZDOTDIR/prompt $fpath)
