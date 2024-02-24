@@ -22,3 +22,9 @@ git clone git@github.com:Filippo831/dotfiles.git
 ```shell
 echo "blacklist pcspkr" > /etc/modprobe.d/nobeep.conf
 ```
+
+- fix kde connect not finding devices
+```shell
+sudo firewall-cmd --permanent --zone=public --add-service=kdeconnect
+sudo firewall-cmd --reload
+```
