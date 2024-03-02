@@ -11,9 +11,19 @@ bat = ["|E|", "|_|", "|=|", "|F|"]
 bat_charging = "|^| "
 
 [[block]]
+block = "custom"
+command = 'gsettings get org.gnome.desktop.interface color-scheme'
+interval = 1
+[[block.click]]
+button = "left"
+cmd= '~/.config/i3/scripts/toggle_gnome_theme.sh'
+
+
+[[block]]
 block = "music"
 format = " $icon {$combo.str(max_w:20) $play $next |}"
 interface_name_exclude = [".*kdeconnect.*", "mpd"]
+
 
 [[block]]
 block = "net"
@@ -42,6 +52,12 @@ block = "battery"
 format = " $percentage {$time |}"
 device = "DisplayDevice"
 driver = "upower"
+
+[[block]]
+block = "temperature"
+format = " $icon $max"
+format_alt = " $icon $min min, $average avg, $max max"
+interval = 10
 
 [[block]]
 block = "time"
