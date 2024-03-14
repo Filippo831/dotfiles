@@ -42,7 +42,7 @@ local function lsp_zero_config()
 
     require('mason').setup({})
     require('mason-lspconfig').setup({
-        ensure_installed = { 'efm', 'lua_ls', 'rust_analyzer', 'clangd' },
+        ensure_installed = { 'efm', 'lua_ls', 'rust_analyzer', 'clangd', 'pyright' },
         handles = {
             lsp_zero.default_setup,
             lua_ls = function()
@@ -96,6 +96,7 @@ local function lsp_zero_config()
             }
         }
     })
+    lsp_zero.configure("pyright")
 
     lsp_zero.configure("rust_analyzer", {
         settings = {

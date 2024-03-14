@@ -186,7 +186,7 @@ bindcode $mod+Shift+90 	 move container to workspace  $ws10
 ######################################
 
 # start a terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec kitty 
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -604,7 +604,7 @@ bindsym $mod+c exec rofi -show calc -modi calc -no-show-match -no-sort -automati
 
 
 #applications autostart
-exec --no-startup-id "sh -c 'sleep 1; exec alacritty'"
+exec --no-startup-id "sh -c 'sleep 1; exec kitty'"
 exec --no-startup-id kdeconnect-app
 exec --no-startup-id firefox
 exec --no-startup-id telegram-desktop

@@ -74,3 +74,6 @@ export PATH=$PATH:/home/filippo/.spicetify
 # Created by `pipx` on 2023-12-06 11:33:56
 export PATH="$PATH:/home/filippo/.local/bin"
 
+
+# Created by `pipx` on 2024-03-08 16:11:01
+export PATH="$PATH:/home/filippoa/.local/bin"

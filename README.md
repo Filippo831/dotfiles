@@ -5,7 +5,7 @@ Personal repository to store config files
 ```shell
 sudo pacman -Syu
 sudo pacman -S arch-keyring
-sudo pacman -S kde-connect python nodejs nvim git obsidian zsh alacritty stow i3status-rust rofi rofi-calc gnome-tweaks ripgrep gnome-power-manager gnome-flashback polkit-gnome cargo gcc
+sudo pacman -S kde-connect python nodejs nvim git obsidian zsh alacritty stow i3status-rust rofi rofi-calc gnome-tweaks ripgrep gnome-power-manager gnome-flashback polkit-gnome cargo gcc npm
 yay -S spotify hack-nf-git i3-gnome
 ```
 
