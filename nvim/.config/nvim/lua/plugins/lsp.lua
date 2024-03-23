@@ -88,6 +88,7 @@ local function lsp_zero_config()
     })
     lsp_zero.configure("clangd")
     lsp_zero.configure("dockerls")
+    lsp_zero.configure("bashls")
 
     lsp_zero.configure("ltex", {
         settings = {
@@ -98,6 +99,9 @@ local function lsp_zero_config()
     })
     lsp_zero.configure("pyright")
 
+    lsp_zero.configure("dartls", {
+        cmd = {"dart", "language-server", "protocol=lsp"}
+    })
     lsp_zero.configure("rust_analyzer", {
         settings = {
             ["rust-analyzer"] = {
