@@ -1,83 +1,22 @@
-# This file is a modified version based on default i3-config-wizard config
-# source is available here:
-# https://raw.githubusercontent.com/endeavouros-team/endeavouros-i3wm-setup/master/.config/i3/config
-# Maintainer: joekamprad [joekamprad@endeavouros.com]
-# https://endeavouros.com
-#
-# iconic font icon search: https://fontawesome.com/v4.7/cheatsheet/
-#
-# --> to update this run the following command (will backup existing setup file)
-# wget --backups=1 https://raw.githubusercontent.com/endeavouros-team/endeavouros-i3wm-setup/main/.config/i3/config -P ~/.config/i3/
-#
-# Endeavouros-i3 config file
-# Source for complete framework of our i3 config and theming here: https://github.com/endeavouros-team/endeavouros-i3wm-setup
-# EndeavourOS wiki holds some Information also: https://discovery.endeavouros.com/window-tiling-managers/i3-wm/
-# Please see http://i3wm.org/docs/userguide.html for the official i3 reference!
-
-#######################
-# config starts here: #
-#######################
-
-# Font for window titles. Will also be used by the bar unless a different font
-# is used in the bar {} block below.
-# This font is widely installed, provides lots of unicode glyphs, right-to-left
-# text rendering and scalability on retina/hidpi displays (thanks to pango).
 font pango: Noto Sans Regular 12
-# bar {
-#     font pango:DejaVu Sans Mono, FontAwesome 12
-#     position top
-#     status_command path/to/i3status-rs path/to/your/config.toml
-#     colors {
-#         separator #666666
-#         background #222222
-#         statusline #dddddd
-#         focused_workspace #0088CC #0088CC #ffffff
-#         active_workspace #333333 #333333 #ffffff
-#         inactive_workspace #333333 #333333 #888888
-#         urgent_workspace #2f343a #900000 #ffffff
-#     }
-# }
-
-# set the mod key to the winkey:
 set $mod Mod4
 
 #####################
 # workspace layout: #
 #####################
 
-# default i3 tiling mode:
 workspace_layout default
 
 exec --no-startup-id dex --autostart --environment i3
-# i3 stacking layout:
-# Each window will be fullscreen and tabbed top to bottom.
-#workspace_layout stacking
-
-# i3 tabbed layout:
-# Each new window will open fullscreen as a tab (left to right)
-#workspace_layout tabbed
-
 ##############################
 # extra options for windows: #
 ##############################
 
-#border indicator on windows:
 new_window pixel 1
 
-# thin borders
-# hide_edge_borders both
-
-# Set inner/outer gaps
 gaps inner 6
 gaps outer 6
 
-# show window title bars (not officially supported with i3gaps)
-#default_border normal
-
-# window title alignment
-#title_align center
-
-# Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
 # switch/iterate between workspaces
@@ -157,16 +96,18 @@ bindcode $mod+Shift+81 	 move container to workspace  $ws9
 bindcode $mod+Shift+90 	 move container to workspace  $ws10
 
 # resize window (you can also use the mouse for that):
-#mode "resize" {
+bindsym $mod+r mode "resize"
+
+mode "resize" {
 # These bindings trigger as soon as you enter the resize mode
 # Pressing left will shrink the window's width.
 # Pressing right will grow the window's width.
 # Pressing up will shrink the window's height.
 # Pressing down will grow the window's height.
-#        bindsym j resize shrink width 10 px or 10 ppt
-#        bindsym k resize grow height 10 px or 10 ppt
-#        bindsym l resize shrink height 10 px or 10 ppt
-#        bindsym ntilde resize grow width 10 px or 10 ppt
+      bindsym l resize shrink width 10 px or 10 ppt
+        bindsym k resize grow height 10 px or 10 ppt
+        bindsym j resize shrink height 10 px or 10 ppt
+        bindsym h resize grow width 10 px or 10 ppt
 
 # same bindings, but for the arrow keys
 #	bindsym Left resize shrink width 10 px or 10 ppt
@@ -176,10 +117,9 @@ bindcode $mod+Shift+90 	 move container to workspace  $ws10
 
 # back to normal: Enter or Escape
 #	bindsym Return mode "default"
-#        bindsym Escape mode "default"
-#}
+       bindsym Escape mode "default"
+}
 
-#bindsym $mod+r mode "resize"
 
 ######################################
 # keybindings for different actions: #
