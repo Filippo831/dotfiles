@@ -1,0 +1,65 @@
+icons_format = "{icon}"
+
+
+[theme]
+theme = "srcery"
+
+[icons]
+icons = "awesome4"
+[icons.overrides]
+bat = ["|E|", "|_|", "|=|", "|F|"]
+bat_charging = "|^| "
+
+[[block]]
+block = "custom"
+command = 'gsettings get org.gnome.desktop.interface color-scheme'
+interval = 1
+[[block.click]]
+button = "left"
+cmd= '~/.config/i3/scripts/toggle_gnome_theme.sh'
+
+
+[[block]]
+block = "music"
+format = " $icon {$combo.str(max_w:20) $play $next |}"
+interface_name_exclude = [".*kdeconnect.*", "mpd"]
+
+
+[[block]]
+block = "net"
+format = " $icon {$signal_strength $ssid $frequency|Wired connection}" 
+
+
+[[block]]
+block = "disk_space"
+path = "/"
+info_type = "available"
+alert_unit = "GB"
+interval = 20
+warning = 20.0
+alert = 10.0
+format = " $icon root: $available.eng(w:2) "
+
+[[block]]
+block = "memory"
+format = " $icon_swap $mem_avail.eng(w:3,u:B,p:Mi)-$swap_free.eng(w:3,u:B,p:Mi)"
+interval = 30
+warning_mem = 70
+critical_mem = 90
+
+[[block]]
+block = "battery"
+format = " $percentage {$time |}"
+device = "DisplayDevice"
+driver = "upower"
+
+[[block]]
+block = "temperature"
+format = " $icon $max"
+format_alt = " $icon $min min, $average avg, $max max"
+interval = 10
+
+[[block]]
+block = "time"
+interval = 5
+format = " $timestamp.datetime(f:'%a %d/%m %R') "
