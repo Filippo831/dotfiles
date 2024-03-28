@@ -1,77 +1,71 @@
 * {
-    border: none;
-    border-radius: 0px;
-    font-family: "Inconsolata";
-    font-size: 13px;
-    min-height: 0;
-    color: #ebdbb2;
+    border:        none;
+    border-radius: 0;
+    font-family:   Sans;
+    font-size:     15px;
+    box-shadow:    none;
+    text-shadow:   none;
+    transition-duration: 0s;
 }
 
-window#waybar {
-    border-bottom-style: inset;
-    border-bottom: 2px solid #689d6a;
-    background: #1d2021;
+window {
+    color:      rgba(217, 216, 216, 1);
+    background: rgba(35, 31, 32, 0.00);
 }
 
-#workspaces, #clock, #custom-music, #window { 
-    font-weight: 800;
+window#waybar.solo {
+    color:      rgba(217, 216, 216, 1);
+    background: rgba(35, 31, 32, 0.85);
 }
 
-/* Workspace Buttons */
-#workspaces button label{
-    color: #689d6a;
+#workspaces {
+    margin: 0 5px;
 }
-#workspaces button.focused label {
-    color: #1d2021;
+
+#workspaces button {
+    padding:    0 5px;
+    color:      rgba(217, 216, 216, 0.4);
 }
+
+#workspaces button.visible {
+    color:      rgba(217, 216, 216, 1);
+}
+
 #workspaces button.focused {
-    background: #689d6a; 
+    border-top: 3px solid rgba(217, 216, 216, 1);
+    border-bottom: 3px solid rgba(217, 216, 216, 0);
 }
 
-#mode {
-    background-color: #cc241d;
-    color: white;
+#workspaces button.urgent {
+    color:      rgba(238, 46, 36, 1);
 }
 
-#clock, #battery, #cpu, #memory, #network, #pulseaudio, #tray, #mode, #idle_inhibitor {
-    padding: 0 5px;
-    margin: 0 10px;
-}
-
-
-#idle_inhibitor {
-    padding: 0 10px;
-}
-
-#idle_inhibitor.activated {
-    background-color: #689d6a;
-    color: #1d2021;
-}
-
-
-#custom-music {
-    color: #b8bb26;
-    margin: 0 15px;
-    padding: 0 20px;
-    border-bottom: 2px solid #b8bb26;
-
+#mode, #battery, #cpu, #memory, #network, #pulseaudio, #idle_inhibitor, #backlight, #custom-storage, #custom-spotify, #custom-weather, #custom-mail {
+    margin:     0px 6px 0px 10px;
+    min-width:  25px;
 }
 
 #clock {
-    margin: 0;
-    color: #fabd2f;
-    border-bottom: 2px solid #fabd2f;
+    margin:     0px 16px 0px 10px;
+    min-width:  140px;
 }
 
-
-#network.disconnected {
-    color: #cc241d;
-    border-bottom: 2px solid #cc241d;
+#battery.warning {
+   color:       rgba(255, 210, 4, 1);
 }
 
+#battery.critical {
+    color:      rgba(238, 46, 36, 1);
+}
 
-#pulseaudio.muted {
-    padding: 0 20px;
-    color: #cc241d;
-    border-bottom: 2px solid #cc241d;
+#battery.charging {
+    color:      rgba(217, 216, 216, 1);
+}
+
+#custom-storage.warning {
+    color:      rgba(255, 210, 4, 1);
+}
+
+#custom-storage.critical {
+    color:      rgba(238, 46, 36, 1);
 }
