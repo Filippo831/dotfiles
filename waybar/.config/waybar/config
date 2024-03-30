@@ -3,9 +3,9 @@
     "position": "top",
     "height": 20,
 
-    "modules-left": ["hyprland/workspaces", "hyprland/mode"],
-    "modules-center": ["hyprland/window"],
-    "modules-right": ["tray", "custom/spotify", "custom/weather", "custom/mail", "custom/storage", "backlight", "pulseaudio", "network", "idle_inhibitor", "battery", "clock"],
+    "modules-left": ["hyprland/workspaces", "hyprland/mode", "hyprland/window"],
+    "modules-center": [],
+    "modules-right": ["tray", "custom/spotify", "custom/weather", "custom/storage", "pulseaudio", "backlight", "bluetooth", "network", "idle_inhibitor", "battery", "clock"],
     "hyprland/mode": {
         "format": " {}"
     },
@@ -33,6 +33,16 @@
         },
         "tooltip": false
     },
+
+    "bluetooth": {
+        // "controller": "controller1", // specify the alias of the controller if there are more than 1 on the system
+        "format": " {status}",
+        "format-connected": " {num_connections} connected",
+        "tooltip-format": "{controller_alias}\t{controller_address}",
+        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}"
+    },
+    
     "network": {
         "format": "{icon}",
         "format-alt": "{ipaddr}/{cidr} {icon}",

@@ -89,6 +89,7 @@ local function lsp_zero_config()
     lsp_zero.configure("clangd")
     lsp_zero.configure("dockerls")
     lsp_zero.configure("bashls")
+    lsp_zero.configure("asm-lsp")
 
     lsp_zero.configure("ltex", {
         settings = {
