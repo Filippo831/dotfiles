@@ -5,11 +5,11 @@ Personal repository to store config files
 ```shell
 sudo pacman -Syu
 sudo pacman -S arch-keyring
-sudo pacman -S kde-connect python nodejs nvim git obsidian zsh alacritty stow i3status-rust rofi rofi-calc gnome-tweaks ripgrep gnome-power-manager gnome-flashback polkit-gnome cargo gcc npm
-yay -S spotify hack-nf-git i3-gnome
+sudo pacman -S kde-connect python nodejs nvim git obsidian zsh alacritty stow rofi rofi-calc gnome-tweaks ripgrep gnome-power-manager gnome-flashback polkit-gnome cargo gcc npm hyprland waybar wofi kitty tmux arandr thunar telegram-desktop
+yay -S spotify hack-nf-git  
 ```
 
-- use tweaks to invert capslock with escape
+<!-- - use tweaks to invert capslock with escape -->
 - setup git ssh [link](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
 - clone dotfile repo
 
