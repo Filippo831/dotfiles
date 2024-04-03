@@ -73,6 +73,11 @@
         "return-type": "json",
         "exec": "~/.config/waybar/modules/spotify.sh",
         "exec-if": "pgrep spotify",
+        "on-click": "playerctl play-pause",
+        "on-click-right": "playerctl stop",
+        "smooth-scrolling-threshold": 10, // This value was tested using a trackpad, it should be lowered if using a mouse.
+        "on-scroll-right": "playerctl next",
+        "on-scroll-left": "playerctl previous",
         "escape": true
     },
     "custom/storage": {
