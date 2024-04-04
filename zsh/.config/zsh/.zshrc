@@ -43,6 +43,8 @@ setopt PUSHD_SILENT         # Do not print the directory stack after pushd or po
 fpath=($ZDOTDIR/plugins $fpath)
 source $ZDOTDIR/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+export PATH="$PATH:$ZDOTDIR/plugins"
+
 
 # FLUTTER
 export PATH="$PATH:$HOME/gitClones/flutter/bin"
@@ -74,6 +76,7 @@ export PATH=$PATH:/home/filippo/.spicetify
 # Created by `pipx` on 2023-12-06 11:33:56
 export PATH="$PATH:/home/filippo/.local/bin"
 
+bindkey -s ^f "tmux-sessionizer\n"
 
 # Created by `pipx` on 2024-03-08 16:11:01
 export PATH="$PATH:/home/filippoa/.local/bin"
