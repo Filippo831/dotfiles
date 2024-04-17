@@ -35,7 +35,6 @@ local function lsp_zero_config()
         vim.keymap.set("n", "gI", vim.lsp.buf.implementation)
         vim.keymap.set("n", "<leader>D", vim.lsp.buf.type_definition)
         vim.keymap.set("i", "<C-h>", vim.lsp.buf.signature_help, opts)
-
     end)
 
     lsp_zero.preset('recommendend')
@@ -89,7 +88,11 @@ local function lsp_zero_config()
     lsp_zero.configure("clangd")
     lsp_zero.configure("dockerls")
     lsp_zero.configure("bashls")
-    lsp_zero.configure("asm-lsp")
+    lsp_zero.configure("asm_lsp", {
+        settings = {
+            filetypes = { "asm", "s", "vmasm" },
+        }
+    })
 
     lsp_zero.configure("ltex", {
         settings = {
@@ -101,8 +104,9 @@ local function lsp_zero_config()
     lsp_zero.configure("pyright")
 
     lsp_zero.configure("dartls", {
-        cmd = {"dart", "language-server", "protocol=lsp"}
+        cmd = { "dart", "language-server", "protocol=lsp" }
     })
+
     lsp_zero.configure("rust_analyzer", {
         settings = {
             ["rust-analyzer"] = {
