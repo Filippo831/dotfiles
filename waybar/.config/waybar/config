@@ -5,7 +5,7 @@
 
     "modules-left": ["hyprland/workspaces", "hyprland/mode", "hyprland/window"],
     "modules-center": [],
-    "modules-right": ["tray", "custom/spotify", "custom/weather", "custom/storage", "pulseaudio", "backlight", "bluetooth", "network", "idle_inhibitor", "battery", "clock"],
+    "modules-right": ["tray", "custom/spotify", "custom/weather", "custom/storage", "pulseaudio", "backlight", "bluetooth", "network", "idle_inhibitor", "battery", "clock", "custom/power"],
     "hyprland/mode": {
         "format": " {}"
     },
@@ -17,9 +17,15 @@
         "max-length": 80,
         "tooltip": false
     },
+    "custom/power": {
+        "format": " ⏻ ",
+        "tooltip": false,
+        "on-click": "wlogout --protocol layer-shell"
+    },
     "clock": {
         "format": "{:%a %d %b %H:%M}",
-        "tooltip": false
+        "tooltip": false,
+        "on-click": "~/.config/eww/scripts/toggle_control_center.sh"
     },
     "battery": {
         "format": "{capacity}% {icon}",

@@ -27,6 +27,7 @@ ZSH_THEME=robbyrussell
 alias ll="ls -al"
 alias ls="ls -p"
 alias ..="cd .."
+alias hibernate="sudo systemctl hibernate"
 
 
 # ZSH DIRECTORY STACK
@@ -80,3 +81,6 @@ bindkey -s ^f "tmux-sessionizer\n"
 
 # Created by `pipx` on 2024-03-08 16:11:01
 export PATH="$PATH:/home/filippoa/.local/bin"
+
+# bun completions
+[ -s "/home/filippoa/.bun/_bun" ] && source "/home/filippoa/.bun/_bun"
