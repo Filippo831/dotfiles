@@ -41,7 +41,7 @@ local function lsp_zero_config()
 
     require('mason').setup({})
     require('mason-lspconfig').setup({
-        ensure_installed = { 'efm', 'lua_ls', 'rust_analyzer', 'clangd', 'pyright' },
+        ensure_installed = { 'efm', 'lua_ls', 'rust_analyzer', 'clangd' },
         handles = {
             lsp_zero.default_setup,
             lua_ls = function()
@@ -86,11 +86,34 @@ local function lsp_zero_config()
         }
     })
     lsp_zero.configure("clangd")
+    lsp_zero.configure("tsserver")
     lsp_zero.configure("dockerls")
     lsp_zero.configure("bashls")
     lsp_zero.configure("asm_lsp", {
         settings = {
             filetypes = { "asm", "s", "vmasm" },
+        }
+    })
+
+    lsp_zero.configure("pylsp", {
+        settings = {
+            pylsp = {
+                plugins = {
+                    flake8 = {
+                        enabled = false,
+                        maxLineLength = 119,
+                    },
+                    mypy = {
+                        enabled = true,
+                    },
+                    pycodestyle = {
+                        enabled = false,
+                    },
+                    pyflakes = {
+                        enabled = false,
+                    },
+                }
+            }
         }
     })
 
@@ -101,7 +124,6 @@ local function lsp_zero_config()
             }
         }
     })
-    lsp_zero.configure("pyright")
 
     lsp_zero.configure("dartls", {
         cmd = { "dart", "language-server", "protocol=lsp" }

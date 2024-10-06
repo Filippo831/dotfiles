@@ -4,6 +4,7 @@ import init from "lib/init"
 import options from "options"
 import Bar from "widget/bar/Bar"
 import Launcher from "widget/launcher/Launcher"
+import {Calculator} from "widget/calc/calc"
 import NotificationPopups from "widget/notifications/NotificationPopups"
 import OSD from "widget/osd/OSD"
 import Overview from "widget/overview/Overview"
@@ -26,6 +27,7 @@ App.config({
         "overview": options.transition.value,
         "quicksettings": options.transition.value,
         "datemenu": options.transition.value,
+        "calculator": options.transition.value,
     },
     windows: () => [
         ...forMonitors(Bar),

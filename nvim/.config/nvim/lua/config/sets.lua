@@ -27,7 +27,7 @@ vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 
-vim.g.netrw_banner = 0
+vim.g.netrw_banner = 1
 
 -- Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 -- delays and poor user experience.
@@ -46,7 +46,4 @@ vim.o.spell = false
 -- global status line
 vim.o.laststatus = 3
 
--- disable netrw
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
 
