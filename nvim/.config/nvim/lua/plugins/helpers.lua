@@ -29,10 +29,6 @@ return {
     },
 
     -- Autopairs brackets
-    {
-        "windwp/nvim-autopairs",
-        config = function() require("nvim-autopairs").setup() end
-    },
 
     -- Undotree
     "mbbill/undotree",
@@ -58,9 +54,5 @@ return {
         build = function() vim.fn["mkdp#util#install"]() end,
     }),
 
-    {
-        "folke/trouble.nvim",
-        dependencies = { "nvim-tree/nvim-web-devicons" },
-    }
 
 }

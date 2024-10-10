@@ -34,7 +34,7 @@ local function lsp_zero_config()
         vim.keymap.set("n", "gd", vim.lsp.buf.definition)
         vim.keymap.set("n", "gI", vim.lsp.buf.implementation)
         vim.keymap.set("n", "<leader>D", vim.lsp.buf.type_definition)
-        vim.keymap.set("i", "<C-h>", vim.lsp.buf.signature_help, opts)
+        vim.keymap.set("i", "<C-l>", vim.lsp.buf.signature_help, opts)
     end)
 
     lsp_zero.preset('recommendend')
@@ -86,7 +86,7 @@ local function lsp_zero_config()
         }
     })
     lsp_zero.configure("clangd")
-    lsp_zero.configure("tsserver")
+    lsp_zero.configure("ts_ls")
     lsp_zero.configure("dockerls")
     lsp_zero.configure("bashls")
     lsp_zero.configure("asm_lsp", {
@@ -95,27 +95,15 @@ local function lsp_zero_config()
         }
     })
 
-    lsp_zero.configure("pylsp", {
+    lsp_zero.configure("pyright", {
+
         settings = {
-            pylsp = {
-                plugins = {
-                    flake8 = {
-                        enabled = false,
-                        maxLineLength = 119,
-                    },
-                    mypy = {
-                        enabled = true,
-                    },
-                    pycodestyle = {
-                        enabled = false,
-                    },
-                    pyflakes = {
-                        enabled = false,
-                    },
-                }
-            }
+            disable_organized_imports = true,
         }
     })
+
+    lsp_zero.configure("ruff_lsp")
+
 
     lsp_zero.configure("ltex", {
         settings = {
@@ -162,6 +150,16 @@ local function lsp_zero_config()
         severity_sort = true,
         float = true,
     })
+    vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
+        vim.lsp.handlers.signature_help, {
+            -- Use `echo` in the command line instead of a floating window
+            focusable = false,
+            border = "none",
+            height = 2
+        }
+    )
+
+
 end
 
 return {
