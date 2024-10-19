@@ -1,4 +1,4 @@
-#██████╗░██████╗██╗░░██╗██████╗░░█████╗░
+#████╗░██████╗██╗░░██╗██████╗░░█████╗░
 #╚════██║██╔════╝██║░░██║██╔══██╗██╔══██╗
 #░░███╔═╝╚█████╗░███████║██████╔╝██║░░╚═╝
 #██╔══╝░░░╚═══██╗██╔══██║██╔══██╗██║░░██╗
@@ -25,7 +25,7 @@ ZSH_THEME=robbyrussell
 
 # GENERAL ALIASES
 alias ll="ls -al"
-alias ls="ls -p"
+alias ls="ls --color=auto -p"
 alias ..="cd .."
 alias hibernate="sudo systemctl hibernate"
 
@@ -46,6 +46,9 @@ source $ZDOTDIR/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $ZDOTDIR/plugins/sudo/sudo.plugin.zsh
 
 export PATH="$PATH:$ZDOTDIR/plugins"
+
+export LS_COLORS="di=36:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=37;41:sg=30;43:tw=30;42:ow=34;42"
+
 
 
 # FLUTTER
