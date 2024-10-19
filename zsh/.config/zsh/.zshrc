@@ -7,7 +7,7 @@
 
 
 # COMPLETION
-plugin=(zsh-syntax-highlighting vi-mode git sudo)
+plugin=(zsh-syntax-highlighting vi-mode git)
 autoload -U compinit; compinit
 _comp_options+=(globdots) # With hidden files
 source $ZDOTDIR/completion.zsh
@@ -43,6 +43,7 @@ setopt PUSHD_SILENT         # Do not print the directory stack after pushd or po
 # PLUGINS
 fpath=($ZDOTDIR/plugins $fpath)
 source $ZDOTDIR/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $ZDOTDIR/plugins/sudo/sudo.plugin.zsh
 
 export PATH="$PATH:$ZDOTDIR/plugins"
 
@@ -70,8 +71,6 @@ alias sshserver="ssh filippoa@100.74.177.144"
 bindkey -v
 bindkey '^r' history-incremental-search-backward
 
-source $HOME/.config/zsh/ohmyzsh/oh-my-zsh.sh
-
 export PATH=$PATH:/home/filippo/.spicetify
 
 # Created by `pipx` on 2023-12-06 11:33:56
@@ -84,3 +83,6 @@ export PATH="$PATH:/home/filippoa/.local/bin"
 
 # bun completions
 [ -s "/home/filippoa/.bun/_bun" ] && source "/home/filippoa/.bun/_bun"
+
+# change theme to starship
+eval "$(starship init zsh)"
