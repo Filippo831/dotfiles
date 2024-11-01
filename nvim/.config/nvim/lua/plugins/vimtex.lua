@@ -1,14 +1,10 @@
-local vimtex_config = function ()
-    vim.g.vimtex_view_method = 'zathura'
-
-    -- vim.g.vimtex_view_general_viewer = 'okular'
-
-    -- vim.g.vimtex_compiler_method = 'latexrun'
-    --
-    -- -- vim.api.nvim_set_var('maplocalleader', ',')
-end
-
 return {
-    "lervag/vimtex",
-    config = vimtex_config,
+  "lervag/vimtex",
+  lazy = false,     -- we don't want to lazy load VimTeX
+  -- tag = "v2.15", -- uncomment to pin to a specific release
+  init = function()
+    -- VimTeX configuration goes here, e.g.
+    vim.g.vimtex_compiler_method = "luatex"
+    vim.g.vimtex_view_method = "zathura"
+  end
 }

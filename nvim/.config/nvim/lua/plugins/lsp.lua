@@ -86,6 +86,21 @@ local function lsp_zero_config()
         }
     })
     lsp_zero.configure("clangd")
+    lsp_zero.configure("texlab", {
+        bibltexFormatter = "texlab",
+        build = {
+            executable = "tectonic",
+            args = {
+              "-X",
+              "compile",
+              "%f",
+              "--synctex",
+              "--keep-logs",
+              "--keep-intermediates"
+            },
+            onSave = true,
+        },
+    })
     lsp_zero.configure("ts_ls")
     lsp_zero.configure("dockerls")
     lsp_zero.configure("bashls")
@@ -105,13 +120,6 @@ local function lsp_zero_config()
     lsp_zero.configure("ruff_lsp")
 
 
-    lsp_zero.configure("ltex", {
-        settings = {
-            ltex = {
-                language = "it",
-            }
-        }
-    })
 
     lsp_zero.configure("dartls", {
         cmd = { "dart", "language-server", "protocol=lsp" }
