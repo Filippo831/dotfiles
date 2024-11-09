@@ -103,5 +103,5 @@ sudo-command-line() {
 zle -N sudo-command-line
 
 # Defined shortcut keys: [Esc] [Esc]
-bindkey -M vicmd '^H' sudo-command-line
-bindkey -M viins '^H' sudo-command-line
+bindkey -M vicmd '^T' sudo-command-line
+bindkey -M viins '^T' sudo-command-line
