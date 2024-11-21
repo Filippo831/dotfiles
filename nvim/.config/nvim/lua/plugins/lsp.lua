@@ -119,7 +119,8 @@ local function lsp_zero_config()
 
     lsp_zero.configure("ruff_lsp")
 
-
+    lsp_zero.configure("kotlin_language_server")
+    lsp_zero.configure("gradle_ls")
 
     lsp_zero.configure("dartls", {
         cmd = { "dart", "language-server", "protocol=lsp" }
