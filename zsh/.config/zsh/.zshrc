@@ -57,6 +57,7 @@ export PATH="$PATH":"$HOME/.pub-cache/bin"
 export CHROME_EXECUTABLE="/usr/bin/google-chrome-stable"
 
 
+export HYPRSHOT_DIR="~/Pictures/Screeshots"
 
 # hdmi audio output alias
 alias hao="pactl set-card-profile 0 output:hdmi-stereo"

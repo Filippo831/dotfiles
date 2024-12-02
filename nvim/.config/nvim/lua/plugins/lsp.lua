@@ -13,7 +13,7 @@ local lsp_zero_dependencies = {
     { "hrsh7th/cmp-nvim-lua" },
 
     -- Snippets
-    { "L3MON4D3/LuaSnip" },
+    { "L3MON4D3/LuaSnip", run = "make install_jsregexp" },
     { "rafamadriz/friendly-snippets" },
 
 }
@@ -42,12 +42,11 @@ local function lsp_zero_config()
     require('mason').setup({})
     require('mason-lspconfig').setup({
         ensure_installed = { 'efm', 'lua_ls', 'rust_analyzer', 'clangd' },
-        handles = {
+        handlers = {
             lsp_zero.default_setup,
-            lua_ls = function()
-                local lua_opts = lsp_zero.nvim_lua_ls()
-                require('lspconfig').lua_ls.setup(lua_opts)
-            end,
+                function(server_name)
+                  require('lspconfig')[server_name].setup({})
+                end,
         }
     })
 
@@ -117,8 +116,6 @@ local function lsp_zero_config()
         }
     })
 
-    lsp_zero.configure("ruff_lsp")
-
     lsp_zero.configure("kotlin_language_server")
     lsp_zero.configure("gradle_ls")
 
@@ -126,20 +123,15 @@ local function lsp_zero_config()
         cmd = { "dart", "language-server", "protocol=lsp" }
     })
 
-    lsp_zero.configure("rust_analyzer", {
-        settings = {
-            ["rust-analyzer"] = {
-                procMacro = {
-                    igored = {
-                        leptos_macr = {
-                            "server",
-                            "component",
-                        }
-                    }
-                },
-            }
-        }
-    })
+    -- lsp_zero.configure("rust_analyzer", {
+    --     settings = {
+    --         ["rust-analyzer"] = {
+    --             diagnostics = {
+    --                 enable = true
+    --             }
+    --         }
+    --     }
+    -- })
 
     -- setup nvim-cmp and luasnip
     cmp.setup({
@@ -153,6 +145,7 @@ local function lsp_zero_config()
         sources = cmp.config.sources({
             { name = 'nvim_lsp' },
             { name = 'luasnip' },
+            { name = 'buffer' }
         })
     })
 

@@ -13,3 +13,4 @@ export VISUAL="nvim"
 
 export TELOXIDE_TOKEN="6226392161:AAGqt2NSeMPdc6Uv2ap3V4xviG1lNilfGRM"
 
+export HYPRSHOT_DIR="~/Pictures/Screeshots"
