@@ -32,6 +32,9 @@ alias hibernate="sudo systemctl hibernate"
 # FZF ALIAS
 alias f='cd $(fd --type d --hidden --exclude .git --exclude node_module --exclude .cache --exclude .npm --exclude .mozilla --exclude .meteor --exclude .nv | fzf)'
 
+# PYTHON VENV ACTIVATE ALIAS
+alias pv='source venv/bin/activate'
+
 
 # ZSH DIRECTORY STACK
 setopt AUTO_PUSHD           # Push the current directory visited on the stack.
