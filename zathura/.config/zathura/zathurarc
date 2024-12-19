@@ -1,5 +1,5 @@
 set selection-clipboard clipboard
 set scroll-step 80
-map <Right> set scroll full-down
-map <Left> set scroll full-up
+map <Right> navigate next
+map <Left> navigate previous
 
