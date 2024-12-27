@@ -43,7 +43,8 @@ setopt PUSHD_SILENT         # Do not print the directory stack after pushd or po
 
 
 # FZF
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source <(fzf --zsh)
 
 
 # PLUGINS
