@@ -46,4 +46,6 @@ vim.o.spell = false
 -- global status line
 vim.o.laststatus = 3
 
-
+-- search not case sensitive
+vim.opt.smartcase = true
+vim.opt.ignorecase = true
