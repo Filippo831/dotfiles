@@ -84,7 +84,11 @@ local function lsp_zero_config()
             }
         }
     })
+
+    lsp_zero.configure("wgsl_analyzer")
+
     lsp_zero.configure("clangd")
+
     lsp_zero.configure("texlab", {
         bibltexFormatter = "texlab",
         build = {
