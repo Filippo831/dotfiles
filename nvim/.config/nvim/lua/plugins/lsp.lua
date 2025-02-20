@@ -113,6 +113,8 @@ local function lsp_zero_config()
         }
     })
 
+    lsp_zero.configure("gopls")
+
     lsp_zero.configure("pyright", {
 
         settings = {
