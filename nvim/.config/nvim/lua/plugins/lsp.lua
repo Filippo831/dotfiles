@@ -13,7 +13,7 @@ local lsp_zero_dependencies = {
     { "hrsh7th/cmp-nvim-lua" },
 
     -- Snippets
-    { "L3MON4D3/LuaSnip",                 run = "make install_jsregexp" },
+    { "L3MON4D3/LuaSnip", run = "make install_jsregexp" },
     { "rafamadriz/friendly-snippets" },
 
 }
@@ -44,9 +44,9 @@ local function lsp_zero_config()
         ensure_installed = { 'efm', 'lua_ls', 'rust_analyzer', 'clangd' },
         handlers = {
             lsp_zero.default_setup,
-            function(server_name)
-                require('lspconfig')[server_name].setup({})
-            end,
+                function(server_name)
+                  require('lspconfig')[server_name].setup({})
+                end,
         }
     })
 
@@ -87,12 +87,12 @@ local function lsp_zero_config()
         build = {
             executable = "tectonic",
             args = {
-                "-X",
-                "compile",
-                "%f",
-                "--synctex",
-                "--keep-logs",
-                "--keep-intermediates"
+              "-X",
+              "compile",
+              "%f",
+              "--synctex",
+              "--keep-logs",
+              "--keep-intermediates"
             },
             onSave = true,
         },
@@ -133,30 +133,16 @@ local function lsp_zero_config()
     -- })
 
     -- setup nvim-cmp and luasnip
-    --
+    local cmp_select = { behavior = cmp.SelectBehavior.Select }
+    local cmp_mappings = lsp_zero.defaults.cmp_mappings({
+        ["<Tab>"] = cmp.mapping.select_next_item(cmp_select),
+        ["<S-Tab>"] = cmp.mapping.select_prev_item(cmp_select),
+        ["<C-Space>"] = cmp.mapping.complete(),
+        ["<CR>"] = cmp.mapping.confirm(cmp_select),
+    })
 
     cmp.setup({
-        mapping = cmp.mapping.preset.insert({
-            -- ['<C-b>'] = cmp.mapping.scroll_docs(-4),
-            -- ['<C-f>'] = cmp.mapping.scroll_docs(4),
-            ['<C-Space>'] = cmp.mapping.complete(),
-            ['<C-e>'] = cmp.mapping.abort(),
-            ['<CR>'] = cmp.mapping.confirm({ select = true }),
-            ["<Tab>"] = cmp.mapping(function(fallback)
-                if luasnip.expand_or_jumpable() then
-                    luasnip.expand_or_jump()
-                else
-                    fallback()
-                end
-            end, { "i", "s" }),
-            ["<S-Tab>"] = cmp.mapping(function(fallback)
-                if luasnip.jumpable(-1) then
-                    luasnip.jump(-1)
-                else
-                    fallback()
-                end
-            end, { "i", "s" }),
-        }),
+        mapping = cmp_mappings,
         formatting = lsp_zero.cmp_format(),
         snippet = {
             expand = function(args)
@@ -190,6 +176,8 @@ local function lsp_zero_config()
             height = 2
         }
     )
+
+
 end
 
 return {
