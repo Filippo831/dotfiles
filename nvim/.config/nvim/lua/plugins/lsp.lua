@@ -13,7 +13,7 @@ local lsp_zero_dependencies = {
     { "hrsh7th/cmp-nvim-lua" },
 
     -- Snippets
-    { "L3MON4D3/LuaSnip", run = "make install_jsregexp" },
+    { "L3MON4D3/LuaSnip",                 run = "make install_jsregexp" },
     { "rafamadriz/friendly-snippets" },
 
 }
@@ -44,9 +44,9 @@ local function lsp_zero_config()
         ensure_installed = { 'efm', 'lua_ls', 'rust_analyzer', 'clangd' },
         handlers = {
             lsp_zero.default_setup,
-                function(server_name)
-                  require('lspconfig')[server_name].setup({})
-                end,
+            function(server_name)
+                require('lspconfig')[server_name].setup({})
+            end,
         }
     })
 
@@ -87,12 +87,12 @@ local function lsp_zero_config()
         build = {
             executable = "tectonic",
             args = {
-              "-X",
-              "compile",
-              "%f",
-              "--synctex",
-              "--keep-logs",
-              "--keep-intermediates"
+                "-X",
+                "compile",
+                "%f",
+                "--synctex",
+                "--keep-logs",
+                "--keep-intermediates"
             },
             onSave = true,
         },
@@ -117,6 +117,8 @@ local function lsp_zero_config()
 
     lsp_zero.configure("kotlin_language_server")
     lsp_zero.configure("gradle_ls")
+    lsp_zero.configure("jsonls")
+    lsp_zero.configure("marksman")
 
     lsp_zero.configure("dartls", {
         cmd = { "dart", "language-server", "protocol=lsp" }
@@ -176,8 +178,6 @@ local function lsp_zero_config()
             height = 2
         }
     )
-
-
 end
 
 return {
