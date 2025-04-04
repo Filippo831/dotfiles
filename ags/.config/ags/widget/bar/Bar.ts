@@ -20,7 +20,6 @@ export type BarWidget = keyof typeof widget
 const widget = {
   battery: BatteryBar,
   colorpicker: ColorPicker,
-  keyboard: Keyboard,
   date: Date,
   launcher: Launcher,
   media: Media,
