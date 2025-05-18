@@ -49,3 +49,6 @@ vim.o.laststatus = 3
 -- search not case sensitive
 vim.opt.smartcase = true
 vim.opt.ignorecase = true
+
+-- setting to make obsidian work
+vim.opt_local.conceallevel = 2
