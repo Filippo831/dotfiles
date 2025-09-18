@@ -76,7 +76,7 @@ xset r rate 300 50
 alias italian="setxkbmap it"
 alias aoeu="setxkbmap -option \"caps:swapescape\""
 alias dvorak="setxkbmap dvorak"
-alias sshserver="ssh filippoa@100.74.177.144"
+alias sshserver-local="ssh server@192.168.1.20 -p 5625"
 
 # reverse search
 bindkey -v
