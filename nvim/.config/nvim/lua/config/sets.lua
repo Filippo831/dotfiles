@@ -51,4 +51,4 @@ vim.opt.smartcase = true
 vim.opt.ignorecase = true
 
 -- setting to make obsidian work
-vim.opt_local.conceallevel = 2
+vim.opt_local.conceallevel = 0

@@ -74,5 +74,19 @@ return {
         -- dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if you prefer nvim-web-devicons
         -- Lazy loading is not recommended because it is very tricky to make it work correctly in all situations.
         lazy = false,
+    },
+        -- Change theme based on system theme
+    {
+        "f-person/auto-dark-mode.nvim",
+        opts = {
+            set_dark_mode = function()
+                vim.api.nvim_set_option_value("background", "dark", {})
+            end,
+            set_light_mode = function()
+                vim.api.nvim_set_option_value("background", "light", {})
+            end,
+            -- update_interval = 3000,
+            fallback = "dark"
+        },
     }
 }

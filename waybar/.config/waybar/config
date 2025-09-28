@@ -62,8 +62,8 @@
     "tooltip": false
     },
     "pulseaudio": {
-        "format": "{icon}",
-        "format-alt": "{volume} {icon}",
+        "format": "{volume}% {icon}",
+        "format-alt": "{icon}",
         "format-alt-click": "click-right",
         "format-muted": "",
         "format-icons": {
@@ -95,7 +95,7 @@
         "exec": "~/.config/waybar/modules/storage.sh"
     },
     "backlight": {
-        "format": "{icon}",
+        "format": "{percent}% {icon}",
         "format-alt": "{percent}% {icon}",
         "format-alt-click": "click-right",
         "format-icons": ["", ""],
