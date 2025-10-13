@@ -97,3 +97,4 @@ export PATH="$PATH:/home/filippoa/.local/bin"
 
 # change theme to starship
 eval "$(starship init zsh)"
+
