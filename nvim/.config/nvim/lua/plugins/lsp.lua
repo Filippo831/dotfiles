@@ -133,6 +133,13 @@ local function lsp_zero_config()
     --         }
     --     }
     -- })
+    --
+    lsp_zero.configure("matlab_ls", {
+        settings = {
+            filetypes = {"matlab"},
+            installed_path = "/home/filippoa/Desktop/university/magistrale/1_1/Digital_signal_processing/matlab",
+        }
+    })
 
     -- setup nvim-cmp and luasnip
     local cmp_select = { behavior = cmp.SelectBehavior.Select }
