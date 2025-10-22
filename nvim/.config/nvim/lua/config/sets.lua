@@ -52,3 +52,5 @@ vim.opt.ignorecase = true
 
 -- setting to make obsidian work
 vim.opt_local.conceallevel = 0
+
+vim.opt.completeopt = { "menuone", "noinsert", "popup" }
