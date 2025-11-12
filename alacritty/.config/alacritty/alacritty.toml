@@ -18,11 +18,13 @@
     family = "Hack Nerd Font"
 
 # Uncomment the line below to fix lag with Mission Control's animations on macOS
-# window_opacity = 0.999
+[window]
+opacity = 0.9
+blur = true
 
 [env]
   TERM = "xterm-256color"
 
 # The definition of color schemes.
-import = "~/.alacritty-colorscheme/themes/gruvbox_dark.yaml"
+import = "./themes/gruvbox_material.toml"
 
