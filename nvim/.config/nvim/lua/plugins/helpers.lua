@@ -75,7 +75,7 @@ return {
         -- Lazy loading is not recommended because it is very tricky to make it work correctly in all situations.
         lazy = false,
     },
-        -- Change theme based on system theme
+    -- Change theme based on system theme
     {
         "f-person/auto-dark-mode.nvim",
         opts = {
@@ -88,5 +88,20 @@ return {
             -- update_interval = 3000,
             fallback = "dark"
         },
+    },
+    {
+        "rachartier/tiny-inline-diagnostic.nvim",
+        event = "VeryLazy",
+        priority = 1000,
+        config = function()
+            require("tiny-inline-diagnostic").setup({
+                options = {
+                    multilines = {
+                        enabled = true,
+                    },
+                },
+            })
+            vim.diagnostic.config({ virtual_text = false }) -- Disable Neovim's default virtual text diagnostics
+        end,
     },
 }
