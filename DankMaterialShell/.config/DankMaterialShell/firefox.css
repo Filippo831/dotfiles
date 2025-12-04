@@ -46,9 +46,9 @@
     --md-sys-color-surface-bright: #fff8f4;
     --md-sys-color-surface-container-lowest: #ffffff;
     --md-sys-color-surface-container-low: #fff1e7;
-    --md-sys-color-surface-container: #fdebdc;
-    --md-sys-color-surface-container-high: #f7e5d6;
-    --md-sys-color-surface-container-highest: #f2dfd0;
+    --md-sys-color-surface-container: #fff8f4;
+    --md-sys-color-surface-container-high: #fff8f4;
+    --md-sys-color-surface-container-highest: #fff8f4;
 
     --m3-radius: 12px;
     --m3-radius-sm: 10px;
