@@ -20,6 +20,7 @@ autocmd('LspAttach', {
         vim.keymap.set("i", "<C-h>", vim.lsp.buf.signature_help, opts)
 
         local client = vim.lsp.get_client_by_id(ev.data.client_id)
+        client.server_capabilities.semanticTokensProvider = nil
 
         -- if client:supports_method('textDocument/completion') then
         --     local chars = {}; for i = 32, 126 do table.insert(chars, string.char(i)) end

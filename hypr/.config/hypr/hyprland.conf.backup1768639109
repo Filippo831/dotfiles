@@ -233,5 +233,3 @@ bind = , XF86PowerOff, exec, hyprlock & disown && systemctl suspend
 # ngw-displays settings
 source = ~/.config/hypr/monitors.conf
 source = ~/.config/hypr/workspaces.conf
-
-source = ./dms/outputs.conf
