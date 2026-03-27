@@ -11,15 +11,6 @@ local harpoon_keys = {
     { "<C-A-s>",   function() require("harpoon.ui").nav_file(8) end },
 }
 
-local function indent_blankline_config()
-    require('ibl').setup {
-        whitespace = {
-            -- highlight = highlight,
-            remove_blankline_trail = false,
-        },
-        scope = { enabled = false },
-    }
-end
 
 return {
     -- Undotree
@@ -34,11 +25,6 @@ return {
         keys = harpoon_keys,
     },
 
-    -- Indentation lines
-    {
-        "lukas-reineke/indent-blankline.nvim",
-        config = indent_blankline_config,
-    },
 
     -- Markdown
     ({
@@ -98,10 +84,10 @@ return {
     },
     {
         "amitds1997/remote-nvim.nvim",
-        version = "*",                  -- Pin to GitHub releases
+        version = "*",                       -- Pin to GitHub releases
         dependencies = {
-            "nvim-lua/plenary.nvim",    -- For standard functions
-            "MunifTanjim/nui.nvim",     -- To build the plugin UI
+            "nvim-lua/plenary.nvim",         -- For standard functions
+            "MunifTanjim/nui.nvim",          -- To build the plugin UI
             "nvim-telescope/telescope.nvim", -- For picking b/w different remote methods
         },
         config = true,
@@ -114,5 +100,26 @@ return {
                 multiline_threshold = 4,
             })
         end
-    }
+    },
+
+    -- profiler
+    {
+        "folke/snacks.nvim",
+        lazy = false,
+        priority = 1000,
+        opts = {
+            profiler = { enabled = true },
+            indent = {
+                enabled = true,
+                hl = "SnacksIndent1",
+                animate = { enabled = false },
+            }
+        },
+        keys = {
+            { "<leader>ps", function() Snacks.profiler.scratch() end,   desc = "Profiler Scratch Bufer" },
+            { "<leader>pp", function() Snacks.profiler.toggle() end,    desc = "Toggle profiler" },
+            { "<leader>ph", function() Snacks.profiler.highlight() end, desc = "Toggle profiler highlight" },
+
+        }
+    },
 }
