@@ -22,14 +22,6 @@ local function indent_blankline_config()
 end
 
 return {
-    -- Comment
-    {
-        'numToStr/Comment.nvim',
-        config = function() require('Comment').setup() end
-    },
-
-    -- Autopairs brackets
-
     -- Undotree
     "mbbill/undotree",
 
@@ -113,5 +105,14 @@ return {
             "nvim-telescope/telescope.nvim", -- For picking b/w different remote methods
         },
         config = true,
+    },
+
+    {
+        "nvim-treesitter/nvim-treesitter-context",
+        config = function()
+            require("treesitter-context").setup({
+                multiline_threshold = 4,
+            })
+        end
     }
 }
