@@ -56,26 +56,4 @@ vim.lsp.config('pylsp', {
     }
 })
 
-vim.lsp.config('jdtls', {
-    cmd = {
-        'java',
-        '-Declipse.application=org.eclipse.jdt.ls.core.id1',
-        '-Dosgi.bundles.defaultStartLevel=4',
-        '-Declipse.product=org.eclipse.jdt.ls.core.product',
-        '-Dlog.level=ALL',
-        '-Xms1g', -- Start with 1GB RAM (prevents constant resizing)
-        '-Xmx2g', -- Limit to 2GB (prevents swapping)
-        '--add-modules=ALL-SYSTEM',
-        '--add-opens', 'java.base/java.util=ALL-UNNAMED',
-        '--add-opens', 'java.base/java.lang=ALL-UNNAMED',
-
-        -- Performance boost: Use the G1 Garbage Collector
-        '-XX:+UseG1GC',
-        '-XX:+UseStringDeduplication',
-
-        -- The actual path to your jdtls jar and workspace
-        '-jar', '~/.local/share/nvim/mason/packages/jdtls/plugins/org.eclipse.equinox.launcher_VERSION.jar',
-        '-configuration', '/path/to/config_linux',
-        '-data', workspace_dir
-    }
-})
+vim.lsp.enable("jdtls")
