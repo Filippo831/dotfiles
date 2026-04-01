@@ -1,28 +1,51 @@
-local harpoon_keys = {
-    { "<leader>a", function() require("harpoon.mark").add_file() end },
-    { "<leader>o", function() require("harpoon.ui").toggle_quick_menu() end },
-    { "<C-h>",     function() require("harpoon.ui").nav_file(1) end },
-    { "<C-t>",     function() require("harpoon.ui").nav_file(2) end },
-    { "<C-n>",     function() require("harpoon.ui").nav_file(3) end },
-    { "<C-s>",     function() require("harpoon.ui").nav_file(4) end },
-    { "<C-A-h>",   function() require("harpoon.ui").nav_file(5) end },
-    { "<C-A-t>",   function() require("harpoon.ui").nav_file(6) end },
-    { "<C-A-n>",   function() require("harpoon.ui").nav_file(7) end },
-    { "<C-A-s>",   function() require("harpoon.ui").nav_file(8) end },
-}
-
-
 return {
     -- Undotree
     "mbbill/undotree",
 
     --Zen mode
-    "folke/zen-mode.nvim",
+    {
+        "folke/zen-mode.nvim",
+        opts = {
+            window = {
+                backdrop = 1,
+            },
+            plugins = {
+                tmux = {
+                    enabled = true,
+                },
+            }
+        }
+    },
 
     -- Harpoon
     {
         "ThePrimeagen/harpoon",
-        keys = harpoon_keys,
+        branch = "harpoon2",
+        dependencies = { "nvim-lua/plenary.nvim" },
+        config = function()
+            local harpoon = require("harpoon")
+
+            -- REQUIRED
+            harpoon:setup()
+            -- REQUIRED
+
+            vim.keymap.set("n", "<leader>a", function() harpoon:list():add() end)
+            vim.keymap.set("n", "<leader>o", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
+
+            vim.keymap.set("n", "<C-h>", function() harpoon:list():select(1) end)
+            vim.keymap.set("n", "<C-t>", function() harpoon:list():select(2) end)
+            vim.keymap.set("n", "<C-n>", function() harpoon:list():select(3) end)
+            vim.keymap.set("n", "<C-s>", function() harpoon:list():select(4) end)
+
+            -- Toggle previous & next buffers stored within Harpoon list
+            vim.keymap.set("n", "<C-S-P>", function() harpoon:list():prev() end)
+            vim.keymap.set("n", "<C-S-N>", function() harpoon:list():next() end)
+        end,
+
+        settings = {
+            save_on_toggle = true,
+            sync_on_ui_closed = true,
+        }
     },
 
 
@@ -40,7 +63,6 @@ return {
             -- refer to the configuration section below
         }
     },
-    "j-hui/fidget.nvim",
 
     {
         'stevearc/oil.nvim',
@@ -82,16 +104,16 @@ return {
             vim.diagnostic.config({ virtual_text = false }) -- Disable Neovim's default virtual text diagnostics
         end,
     },
-    {
-        "amitds1997/remote-nvim.nvim",
-        version = "*",                       -- Pin to GitHub releases
-        dependencies = {
-            "nvim-lua/plenary.nvim",         -- For standard functions
-            "MunifTanjim/nui.nvim",          -- To build the plugin UI
-            "nvim-telescope/telescope.nvim", -- For picking b/w different remote methods
-        },
-        config = true,
-    },
+    -- {
+    --     "amitds1997/remote-nvim.nvim",
+    --     version = "*",                       -- Pin to GitHub releases
+    --     dependencies = {
+    --         "nvim-lua/plenary.nvim",         -- For standard functions
+    --         "MunifTanjim/nui.nvim",          -- To build the plugin UI
+    --         "nvim-telescope/telescope.nvim", -- For picking b/w different remote methods
+    --     },
+    --     config = true,
+    -- },
 
     {
         "nvim-treesitter/nvim-treesitter-context",
