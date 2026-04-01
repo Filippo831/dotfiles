@@ -237,7 +237,7 @@
       "cursorHideTimeout": 0
     }
   },
-  "launcherLogoMode": "apps",
+  "launcherLogoMode": "compositor",
   "launcherLogoCustomPath": "",
   "launcherLogoColorOverride": "",
   "launcherLogoColorInvertOnMode": false,
@@ -476,7 +476,7 @@
       "spacing": 0,
       "innerPadding": 0,
       "bottomGap": 0,
-      "transparency": 0.5,
+      "transparency": 0.31,
       "widgetTransparency": 0.9,
       "squareCorners": true,
       "noBackground": false,
@@ -493,7 +493,8 @@
       "openOnOverview": false,
       "visible": true,
       "popupGapsAuto": true,
-      "popupGapsManual": 4
+      "popupGapsManual": 4,
+      "widgetOutlineEnabled": false
     }
   ],
   "desktopClockEnabled": false,
@@ -567,7 +568,12 @@
   "desktopWidgetGridSettings": {},
   "desktopWidgetInstances": [],
   "desktopWidgetGroups": [],
-  "builtInPluginSettings": {},
+  "builtInPluginSettings": {
+    "dms_settings_search": {
+      "trigger": "?",
+      "enabled": false
+    }
+  },
   "clipboardEnterToPaste": false,
   "launcherPluginVisibility": {},
   "launcherPluginOrder": [],

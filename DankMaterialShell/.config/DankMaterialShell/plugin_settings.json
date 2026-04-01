@@ -2,5 +2,10 @@
   "dankKDEConnect": {
     "enabled": true,
     "selectedDeviceId": "2c407331_5c47_444a_95de_345a560a8a31"
+  },
+  "calculator": {
+    "enabled": true,
+    "trigger": "=",
+    "calcEngine": "qalc"
   }
 }
