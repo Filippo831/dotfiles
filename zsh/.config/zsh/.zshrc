@@ -32,6 +32,9 @@ alias hibernate="sudo systemctl hibernate"
 # FZF ALIAS
 alias f='cd $(fd --type d --hidden --exclude .git --exclude node_module --exclude .cache --exclude .npm --exclude .mozilla --exclude .meteor --exclude .nv | fzf)'
 
+# todo
+alias todo='nvim ~/Desktop/todo.txt'
+
 # PYTHON VENV ACTIVATE ALIAS
 alias pv='source venv/bin/activate'
 

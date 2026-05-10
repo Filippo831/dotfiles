@@ -1,0 +1,25 @@
+(defpoll todo_content :interval "10s"
+  "cat ~/Desktop/todo.txt")
+
+(defwidget todo_list []
+  (box :class "todo-box"
+       :orientation "v"
+       :space-evenly false
+    (label :class "todo-title" :text "Tasks")
+    (label :class "todo-text" 
+           :text todo_content
+           :justify "left"
+           :xalign 0)))
+
+(defwindow todo_bg
+  :monitor 0
+  :stacking "bottom" ;; This keeps it behind other windows
+  :geometry (geometry :x "20px"
+                     :y "20px"
+                     :width "300px"
+                     :height "500px"
+                     :anchor "top left")
+  :focusable false
+  :windowtype "dock"
+  :wm-ignore false
+  (todo_list))

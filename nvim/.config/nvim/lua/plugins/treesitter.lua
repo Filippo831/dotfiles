@@ -5,7 +5,7 @@ local function treesitter_config()
             enable = true,
             additional_vim_regex_highlighting = false,
         },
-        indent = { enable = true },
+        indent = { enable = false },
         incremental_selection = {
             enable = true,
             keymaps = {
@@ -22,5 +22,6 @@ end
 
 return {
     "nvim-treesitter/nvim-treesitter",
+    branch = 'master',
     config = treesitter_config,
 }
