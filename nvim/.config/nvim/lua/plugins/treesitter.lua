@@ -1,27 +1,36 @@
-local function treesitter_config()
-    require("nvim-treesitter.configs").setup {
-        ensure_installed = { "c", "cpp", "rust", "python", "lua", "json", "html", "vim", "vimdoc" },
-        highlight = {
-            enable = true,
-            additional_vim_regex_highlighting = false,
-        },
-        indent = { enable = false },
-        incremental_selection = {
-            enable = true,
-            keymaps = {
-                init_selection = "<CR>",
-                node_incremental = "<CR>",
-                scope_incremental = "<TAB>",
-                node_decremental = "<S-TAB>",
-            },
-        },
-    }
-end
-
-
+-- local function treesitter_config()
+--     require("nvim-treesitter.configs").setup {
+--         ensure_installed = { "c", "cpp", "rust", "python", "lua", "json", "html", "vim", "vimdoc" },
+--         highlight = {
+--             enable = true,
+--             additional_vim_regex_highlighting = false,
+--         },
+--         indent = { enable = false },
+--         incremental_selection = {
+--             enable = true,
+--             keymaps = {
+--                 init_selection = "<CR>",
+--                 node_incremental = "<CR>",
+--                 scope_incremental = "<TAB>",
+--                 node_decremental = "<S-TAB>",
+--             },
+--         },
+--     }
+-- end
+--
+--
+--
+-- return {
+--     "nvim-treesitter/nvim-treesitter",
+--     branch = 'master',
+--     config = treesitter_config,
+-- }
 
 return {
-    "nvim-treesitter/nvim-treesitter",
-    branch = 'master',
-    config = treesitter_config,
+    "arborist-ts/arborist.nvim";
+    config = function ()
+        require("arborist").setup({
+            prefer_wasm = false;
+        })
+    end
 }
