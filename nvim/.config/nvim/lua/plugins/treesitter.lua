@@ -31,6 +31,9 @@ return {
     config = function ()
         require("arborist").setup({
             prefer_wasm = false;
+            disable = {
+                indent = {"cpp", "hpp"},
+            }
         })
     end
 }
