@@ -83,7 +83,6 @@ alias sshserver-local="ssh server@192.168.1.20 -p 5625"
 
 # reverse search
 bindkey -v
-bindkey '^r' history-incremental-search-backward
 
 export PATH=$PATH:/home/filippo/.spicetify
 
