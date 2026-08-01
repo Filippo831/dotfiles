@@ -1,0 +1,16 @@
+# font
+font_family      Hack Mono 
+# font_family       VictorMono
+# font_family       Blex Mono Nerd Font Complete Mono
+font_size         17
+
+# theme
+# include ./theme/gruvbox.conf
+
+# general configuration
+enable_audio_bell no
+disable_ligatures always
+confirm_os_window_close 0
+background_opacity 0.92
+background_blur 20
+# window_padding_width 0.0 0.0 8.0 0.0
