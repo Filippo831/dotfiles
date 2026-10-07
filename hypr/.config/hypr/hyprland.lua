@@ -94,7 +94,36 @@ hl.window_rule({ match = { class = "^(zoom)$" }, float = true })
 hl.layer_rule({ match = { namespace = "^(quickshell)$" }, no_anim = true })
 hl.layer_rule({ match = { namespace = "^dms:.*" }, no_anim = true })
 
-require("dms.colors")
+
+    -- col.active_border = rgba(9c8565ff) rgba(92c785ff) 45deg
+    -- col.inactive_border = rgba(595959aa)
+hl.config({
+	general = {
+
+		col = {
+			active_border = {colors = {"rgba(9c8565ff)","rgba(92c785ff)"}, angle = 45},
+			inactive_border = "rgba(595959aa)",
+		},
+	},
+	group = {
+		col = {
+			border_active = "rgb(fe8019)",
+			border_inactive = "rgb(665c54)",
+			border_locked_active = "rgb(cc241d)",
+			border_locked_inactive = "rgb(665c54)",
+		},
+		groupbar = {
+			col = {
+				active = "rgb(fe8019)",
+				inactive = "rgb(665c54)",
+				locked_active = "rgb(cc241d)",
+				locked_inactive = "rgb(665c54)",
+			},
+		},
+	},
+})
+
+-- require("dms.colors")
 require("dms.outputs")
 require("dms.layout")
 require("dms.cursor")

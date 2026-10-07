@@ -8,11 +8,12 @@ hl.bind("ALT + space", hl.dsp.exec_cmd("dms ipc call spotlight-bar toggle"))
 -- hl.bind("SUPER + M", hl.dsp.exec_cmd("dms ipc call processlist focusOrToggle"))
 hl.bind("SUPER + comma", hl.dsp.exec_cmd("dms ipc call settings focusOrToggle"))
 -- hl.bind("SUPER + N", hl.dsp.exec_cmd("dms ipc call notifications toggle"))
--- hl.bind("SUPER + SHIFT + N", hl.dsp.exec_cmd("dms ipc call notepad toggle"))
+hl.bind("SUPER + N", hl.dsp.exec_cmd("dms ipc call notepad toggle"))
 -- hl.bind("SUPER + Y", hl.dsp.exec_cmd("dms ipc call dash toggle wallpaper"))
 -- hl.bind("SUPER + TAB", hl.dsp.exec_cmd("dms ipc call hypr toggleOverview"))
 -- hl.bind("SUPER + O", hl.dsp.exec_cmd("dms ipc call hypr toggleOverview"))
 -- hl.bind("SUPER + X", hl.dsp.exec_cmd("dms ipc call powermenu toggle"))
+hl.bind("SUPER + E", hl.dsp.exec_cmd("thunar"))
 
 -- === Cheat sheet
 -- hl.bind("SUPER + SHIFT + Slash", hl.dsp.exec_cmd("dms ipc call keybinds toggle hyprland"))
@@ -40,8 +41,7 @@ hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd([[dms ipc call brightness decre
 
 -- === Window Management ===
 hl.bind("SUPER + SHIFT + Q", hl.dsp.window.close())
-hl.bind("SUPER + F", hl.dsp.window.fullscreen({ mode = "maximized", action = "toggle" }))
-hl.bind("SUPER + SHIFT + F", hl.dsp.window.fullscreen({ mode = "fullscreen", action = "toggle" }))
+hl.bind("SUPER + F", hl.dsp.window.fullscreen({ mode = "fullscreen", action = "toggle" }))
 hl.bind("SUPER + SHIFT + T", hl.dsp.window.float({ action = "toggle" }))
 -- hl.bind("SUPER + W", hl.dsp.group.toggle())
 hl.bind("SUPER + SHIFT + W", hl.dsp.exec_cmd("dms ipc call window-rules toggle"))
