@@ -1,0 +1,14 @@
+{
+  "lockfileVersion": 1,
+  "plugins": {
+    "calculator": {
+      "repo": "https://github.com/rochacbruno/DankCalculator",
+      "commit": "07d7c123a5aee9ac4fd4347bbae36d5957b021f9"
+    },
+    "dankKDEConnect": {
+      "repo": "https://github.com/AvengeMedia/dms-plugins",
+      "path": "DankKDEConnect",
+      "commit": "141841fc85e01494df6d217bd5a27c65da87256d"
+    }
+  }
+}
