@@ -11,7 +11,7 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("firefox", { workspace = "3 silent" })
     hl.exec_cmd("kdeconnect-app", { workspace = "6 silent" })
     hl.exec_cmd("Telegram", { workspace = "7 silent" })
-    hl.exec_cmd("spotify-launcher", { workspace = "8 silent" })
+    hl.exec_cmd("spotifast", { workspace = "8 silent" })
 end)
 -- DMS_STARTUP_END
 
